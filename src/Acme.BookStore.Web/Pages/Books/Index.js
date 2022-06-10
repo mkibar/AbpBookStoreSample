@@ -47,11 +47,13 @@
                 },
                 {
                     title: l('Name'),
-                    data: "name"
+                    data: "name",
+                    //visible: function () { return false;}()
                 },
                 {
                     title: l('Author'),
-                    data: "authorName"
+                    data: "authorName",
+                    //visible: function (data) { console.log("id: ",data); return true; }()
                 },
                 {
                     title: l('Type'),
@@ -76,7 +78,8 @@
                     data: "price"
                 },
                 {
-                    title: l('CreationTime'), data: "creationTime",
+                    title: l('CreationTime'),
+                    data: "creationTime",
                     render: function (data) {
                         return luxon
                             .DateTime
@@ -88,6 +91,9 @@
             ]
         })
     );
+
+    //const col = dataTable.column(2)
+    //col.visible(false);
 
     createModal.onResult(function () {
         dataTable.ajax.reload();

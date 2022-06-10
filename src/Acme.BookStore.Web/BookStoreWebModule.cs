@@ -114,6 +114,7 @@ public class BookStoreWebModule : AbpModule
                 bundle =>
                 {
                     bundle.AddFiles("/global-styles.css");
+                    bundle.AddFiles("/styles/material-kit.css");
                 }
             );
         });
